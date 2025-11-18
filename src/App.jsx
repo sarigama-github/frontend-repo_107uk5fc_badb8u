@@ -1,71 +1,71 @@
+import React from 'react'
+import Spline from '@splinetool/react-spline'
+import LogoMark from './components/LogoMark'
+
 function App() {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || ''
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+    <div className="min-h-screen bg-[#FAF7F2] text-[#1E1E1E]">
+      {/* Hero with Spline animation */}
+      <div className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden flex items-center justify-center">
+        <Spline scene="https://prod.spline.design/Tu-wEVxfDuICpwJI/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        {/* Soft cream overlay gradient for harmony; non-blocking pointer events */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAF7F2]/90"></div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center px-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur-sm text-xs tracking-widest uppercase">
+            Ēdama luksusa ziedu kolekcija
           </div>
         </div>
       </div>
+
+      {/* Brand header */}
+      <section className="px-6 md:px-10 -mt-16 md:-mt-24 relative z-10">
+        <div className="mx-auto max-w-5xl bg-white rounded-2xl shadow-sm border border-black/5 p-8 md:p-12">
+          <div className="flex flex-col md:flex-row items-center md:items-end gap-8">
+            <LogoMark layout="stacked" scheme="charcoal" width={520} height={260} />
+            <div className="flex-1 text-sm md:text-base text-[#494949] leading-relaxed">
+              <p>
+                Zefīru Ziedi apvieno delikātu zefīra tekstūru ar minimālistisku ziedu estētiku. Roku darbs, moderns un izsmalcināts – piemērots gan svētkiem, gan ikdienas baudai.
+              </p>
+            </div>
+          </div>
+
+          {/* Variations preview */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+            <div className="flex items-center justify-center h-40 rounded-xl bg-[#FAF7F2] border border-black/10">
+              <LogoMark layout="horizontal" scheme="charcoal" width={320} height={120} />
+            </div>
+            <div className="flex items-center justify-center h-40 rounded-xl bg-white border border-black/10">
+              <LogoMark layout="horizontal" scheme="blackOnWhite" width={320} height={120} />
+            </div>
+            <div className="flex items-center justify-center h-40 rounded-xl bg-[#111111] border border-black/20">
+              <LogoMark layout="horizontal" scheme="whiteOnDark" width={320} height={120} />
+            </div>
+          </div>
+
+          <div className="mt-10 text-xs text-[#6B6B6B]">
+            Piezīme: Logotips ir veidots kā vektors ar vienkāršām, vienkrāsainām formām un darbojas gan gaišajos, gan tumšajos variantos.
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-6 md:px-10 py-16">
+        <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold tracking-wide">Zefīru Ziedi</h3>
+            <p className="text-sm text-[#6B6B6B]">Ēdama luksusa ziedu kolekcija</p>
+          </div>
+          <div className="md:text-right text-sm text-[#8C8C8C]">
+            {backendUrl ? (
+              <a href="/test" className="underline hover:no-underline">Sistēmas pārbaude</a>
+            ) : (
+              <span>© {new Date().getFullYear()} Zefīru Ziedi</span>
+            )}
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
